@@ -230,7 +230,7 @@ legend_edge <- ggplot(edge_corr_all, aes(x=reorder(scale_name,-desc(correlation)
   scale_color_manual(values = instrument_colors)
 
 # 2: create plot
-edgewise_div <- ggplot(edge_corr_all, aes(x = reorder(scale_name,-desc(divergence)), y = divergence, color = significance_div))+
+figure_2b <- ggplot(edge_corr_all, aes(x = reorder(scale_name,-desc(divergence)), y = divergence, color = significance_div))+
   geom_point(size=2.5)+ 
   scale_color_manual(values = c("Nominally Significant (p < .05)" = "turquoise4",
                                 "Nonsignificant" = "#999999",
@@ -259,9 +259,10 @@ edgewise_div <- ggplot(edge_corr_all, aes(x = reorder(scale_name,-desc(divergenc
   labs(title = "Fingerprint divergence score",
        x = "Scale Name", y = "Divergence (1 - Pearson's r)",
        color = "Statistical significance")
+figure_2b
 
 # 3: combine legend and plot
-edgewise_div_leg <- edgewise_div + annotation_custom(ggplotGrob(legend_edge),
+edgewise_div_leg <- figure_2b + annotation_custom(ggplotGrob(legend_edge),
                                                      ymin = 0.035, ymax = 0.055, 
                                                      xmin = 0.2, xmax = 53.6) 
 edgewise_div_leg
@@ -426,7 +427,7 @@ edge_eff_corr <- pull(edge_eff_corr)
 
 # 3: plot
 
-scatterplot_eff_edge_corr <- edge_corr_eff %>% 
+figure_2d <- edge_corr_eff %>% 
   ggplot(., aes(y=divergence, x=abs_delta_eff, label = scale_name))+
   geom_point(aes(color = scale_title), alpha=1)+
   theme(axis.text.x = element_text(size=15))+
@@ -439,7 +440,7 @@ scatterplot_eff_edge_corr <- edge_corr_eff %>%
   ylab("Divergence (1 - Correlation between XXY and XYY)") +
   labs(title = "Divergence is not related to absolute effect size",
        subtitle = "r = -0.01")
-scatterplot_eff_edge_corr
+figure_2d
 
 #===============================================================================
 ## Comparing the full distribution of pairwise coupling between all scales 
@@ -494,7 +495,7 @@ ks_estimate_obs <- res$statistic
 
 ## Create Fig. 3
 
-edge_strength_density <- ggplot(data=upper_fisher, aes(x=edge_strength, group=group, colour=group)) +
+figure_3 <- ggplot(data=upper_fisher, aes(x=edge_strength, group=group, colour=group)) +
   geom_density(adjust=1.5, alpha=.5) +
   labs(title = "Edge strength in XXY vs XYY", x = "Edge Strength (Fisher's Z-transformed)",
        y = "Density", fill = "Group",
@@ -510,4 +511,4 @@ edge_strength_density <- ggplot(data=upper_fisher, aes(x=edge_strength, group=gr
         legend.text=element_text(size=14),
         plot.title = element_text(size=16),
         plot.subtitle = element_text(size=14))
-edge_strength_density
+figure_3
