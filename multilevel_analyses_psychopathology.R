@@ -82,12 +82,6 @@ fisher_matrix_xxy <- matrix(sapply(matrix_xxy, fisher_z_transform), nrow = ncol(
 
 fisher_matrix_xyy <- matrix(sapply(matrix_xyy, fisher_z_transform), nrow = ncol(matrix_xyy))
 
-# change the row and column names to scale names
-rownames(fisher_matrix_xxy) <-colnames(matrix_xxy)
-colnames(fisher_matrix_xxy) <- colnames(matrix_xxy)
-
-rownames(fisher_matrix_xyy) <-colnames(matrix_xyy)
-colnames(fisher_matrix_xyy) <- colnames(matrix_xyy)
 #===============================================================================
 ### Comparing the strength of each scale’s connectivity with all others
 
