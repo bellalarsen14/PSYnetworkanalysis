@@ -123,6 +123,7 @@ residuals_nd <- nodal_xyy - fitted_values
 
 # 3C: Display the residuals as a dataframe
 residuals_nd <- as.data.frame(residuals_nd)
+rownames(residuals_nd) <-colnames(matrix_xxy)
 View(residuals_nd)
 
 ## Create Fig. 2A
