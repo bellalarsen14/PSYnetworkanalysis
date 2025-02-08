@@ -47,7 +47,7 @@ library(poolr)
 
 ### Load in correlation matrices - two 53x53 matrices (XXY/KS and XYY) - Pearson Correlations between scales
 matrix_xxy <- read.csv("matrix_xxy.csv")
-matrix_xxy <- read.csv("matrix_xyy.csv")
+matrix_xyy <- read.csv("matrix_xyy.csv")
 
 ### Load in effect size dataframes
 cocor_xxy_df_eff_nodal <- read.csv("cocor_xxy_df_eff_nodal.csv")
@@ -58,6 +58,19 @@ divergence_p_perm_long <- read.csv("divergence_p_perm_long.csv")
 ag_p_diff_p_perm_long <- read.csv("ag_p_diff_p_perm_long.csv")
 
 ### Transform correlation coefficients using Fisher's Z
+
+# 1: convert dataframes to matrices
+rownames(matrix_xxy) <- matrix_xxy[,1]
+matrix_xxy <- matrix_xxy %>% 
+  select(-1)
+matrix_xxy <- as.matrix(matrix_xxy)
+
+rownames(matrix_xyy) <- matrix_xyy[,1]
+matrix_xyy <- matrix_xyy %>% 
+  select(-1)
+matrix_xyy <- as.matrix(matrix_xyy)
+
+# 2: Fisher's Z transform
 fisher_z_transform <- function(r) {
   fisherz(r)
 } 
