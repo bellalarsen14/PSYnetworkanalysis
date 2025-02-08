@@ -97,6 +97,9 @@ df_nodal_xxy <- as.data.frame(nodal_xxy) %>%
 df_nodal_xyy <- as.data.frame(nodal_xyy) %>% 
   mutate(group = "XYY")
 
+rownames(df_nodal_xxy) <-colnames(matrix_xxy)
+rownames(df_nodal_xyy) <-colnames(matrix_xyy)
+
 df_nodal_xxy <- tibble::rownames_to_column(df_nodal_xxy, "scale_name") %>% 
   select(-group)
 df_nodal_xyy <- tibble::rownames_to_column(df_nodal_xyy, "scale_name") %>% 
