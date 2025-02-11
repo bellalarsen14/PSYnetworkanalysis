@@ -193,6 +193,7 @@ f <- function(r1,r2){
 }
 
 edge_corr <- map2_dfr(as.data.frame(fisher_matrix_xxy), as.data.frame(fisher_matrix_xyy), f)
+colnames(edge_corr) <-colnames(matrix_xxy)
 
 edge_corr <- edge_corr %>% 
   pivot_longer(cols = 1:53, names_to = "scale_name", values_to = "correlation")
