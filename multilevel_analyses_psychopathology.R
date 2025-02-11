@@ -56,6 +56,7 @@ cocor_xyy_df_eff_nodal <- read.csv("cocor_xyy_df_eff_nodal.csv")
 ### Load in permuted p-values
 divergence_p_perm_long <- read.csv("divergence_p_perm_long.csv")
 ag_p_diff_p_perm_long <- read.csv("ag_p_diff_p_perm_long.csv")
+soc_CBCL_p_perm_long <- read.csv("soc_CBCL_p_perm_long.csv")
 
 ### Transform correlation coefficients using Fisher's Z
 
