@@ -47,13 +47,23 @@ library(poolr)
 
 ### Load in correlation matrices - two 53x53 matrices (XXY/KS and XYY) - Pearson Correlations between scales
 matrix_xxy <- read.csv("matrix_xxy.csv")
-matrix_xxy <- read.csv("matrix_xyy.csv")
+matrix_xyy <- read.csv("matrix_xyy.csv")
 
 ### Load in cluster naming files
-cluster_naming <- read.csv("cluster_naming")
-cluster_naming <- read.csv(file = "/Users/larsenig/Desktop/Project/Datasets/cluster_naming.csv")
+cluster_naming <- read.csv("cluster_naming.csv")
 
-### Transform correlation coefficients using Fisher's Z
+# 1: convert dataframes to matrices
+rownames(matrix_xxy) <- matrix_xxy[,1]
+matrix_xxy <- matrix_xxy %>% 
+  select(-1)
+matrix_xxy <- as.matrix(matrix_xxy)
+
+rownames(matrix_xyy) <- matrix_xyy[,1]
+matrix_xyy <- matrix_xyy %>% 
+  select(-1)
+matrix_xyy <- as.matrix(matrix_xyy)
+
+# 2: Fisher's Z transform
 fisher_z_transform <- function(r) {
   fisherz(r)
 } 
