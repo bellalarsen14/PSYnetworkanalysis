@@ -50,7 +50,7 @@ matrix_xxy <- read.csv("matrix_xxy.csv")
 matrix_xyy <- read.csv("matrix_xyy.csv")
 
 ### Load in cluster naming files
-cluster_naming <- read.csv("cluster_naming.csv")
+cluster_naming <- read.csv("Cluster_Naming.csv")
 
 # 1: convert dataframes to matrices
 rownames(matrix_xxy) <- matrix_xxy[,1]
@@ -318,11 +318,11 @@ xxy_block.reorder <- c(1:7)[order(colMeans(xxy_sbm_g_op$model_parameters[[7]]$mu
 xxy_cluster_reordered <- as.factor(xxy_cluster_memberships)
 levels(xxy_cluster_reordered) <- xxy_block.reorder # reorder the factor variable based on the correlation
 
-# 5: make df of the clusters and their memberships
-xxy_cluster_labels <- data.frame(scale = colnames(c.t.h.XXY[,-c(1:3, 8:11, 29:31, 36:41, 70:71)]), 
-                                 sbm_cluster = xxy_cluster_memberships, 
+# 5: make a dataframe of the clusters and their memberships
+xxy_cluster_labels <- data.frame(scale = colnames(matrix_xxy), 
+                                   sbm_cluster = xxy_cluster_memberships, 
                                  xxy_sbm_cluster_ordered = factor(xxy_cluster_memberships,levels = order(colMeans(xxy_sbm_g_op$model_parameters[[7]]$mu)))) %>%
-  arrange(xxy_sbm_cluster_ordered) # 3 6 2 1 4 5 7
+  arrange(xxy_sbm_cluster_ordered) # 3 6 2 5 1 4 7
 
 # 6: label the blocks
 xxy_cluster_labels$names <- factor(xxy_cluster_labels$xxy_sbm_cluster_ordered)
@@ -358,8 +358,6 @@ xxy_cluster_order_cols <- xxy_cluster_labels %>%
 
 xxy_cluster_order_cols <- xxy_cluster_order_cols %>% 
   arrange(desc(XXY), desc(order_scale))
-
-print(xxy_cluster_order_cols)
 
 custom_cols_xxy <- xxy_cluster_order_cols$scale
 custom_rows_xxy <- xxy_cluster_labels$scale
@@ -438,11 +436,11 @@ str(xyy_sbm_g_op)
 xyy_cluster_reordered <- as.factor(xyy_cluster_memberships)
 levels(xyy_cluster_reordered) <- xyy_block.reorder 
 
-# 5: make dataframe of the clusters and their memberships
-xyy_cluster_labels <- data.frame(scale = colnames(c.t.h.XYY[,-c(1:3, 8:11, 29:31, 36:41, 70:71)]), 
+# 5: make a dataframe of the clusters and their memberships
+xyy_cluster_labels <- data.frame(scale = colnames(matrix_xyy), 
                                  sbm_cluster = xyy_cluster_memberships, 
                                  xyy_sbm_cluster_ordered = factor(xyy_cluster_memberships,levels = order(colMeans(xyy_sbm_g_op$model_parameters[[9]]$mu)))) %>%
-  arrange(xyy_sbm_cluster_ordered) # 1 2 4 8 6 9 7 3 5
+  arrange(xyy_sbm_cluster_ordered) # 1 2 4 8 7 9 6 3 5
 
 # 6: label the blocks
 xyy_cluster_labels$names <- factor(xyy_cluster_labels$xyy_sbm_cluster_ordered)
@@ -466,15 +464,13 @@ xyy_cluster_order <- as.numeric(as.character(xyy_cluster_labels$sbm_cluster))
 xyy_cluster_order_cols <- rev(as.numeric(as.character(xyy_cluster_labels$sbm_cluster)))
 
 xyy_cluster_order_cols <- xyy_cluster_labels %>% 
-  arrange(desc(XXY_cluster_naming)) %>% 
-  group_by(XXY_cluster_naming) %>%
+  arrange(desc(XYY)) %>% 
+  group_by(XYY) %>%
   mutate(order_scale = row_number()) %>% 
   ungroup()
 
 xyy_cluster_order_cols <- xyy_cluster_order_cols %>% 
-  arrange(desc(XXY_cluster_naming), desc(order_scale))
-
-print(xyy_cluster_order_cols)
+  arrange(desc(XYY), desc(order_scale))
 
 custom_cols_xyy <- xyy_cluster_order_cols$scale
 custom_rows_xyy <- xyy_cluster_labels$scale
@@ -492,8 +488,8 @@ matrix_xyy_ordered <- matrix_xyy[row_indices_xyy,col_indices_xyy]
 min(matrix_xyy)
 
 ## Plot the XYY heatmap
-superheat(matrix_xyy_ordered, membership.rows = xyy_cluster_labels$XXY_cluster_naming, 
-          membership.cols = xyy_cluster_order_cols$XXY_cluster_naming, 
+superheat(matrix_xyy_ordered, membership.rows = xyy_cluster_labels$XYY, 
+          membership.cols = xyy_cluster_order_cols$XYY, 
           title = 'WSBM clustering XYY', 
           bottom.label = "variable", bottom.label.text.size = 7, 
           bottom.label.col = "white",
@@ -534,8 +530,9 @@ superheat(matrix_xyy_ordered, membership.rows = xyy_cluster_labels$XXY_cluster_n
           legend.height = 0.2,
           legend.width = 3,
           legend.text.size = 16) # assign colors to values
+                                 
 #===============================================================================
-
+                                 
 ## Create Fig. S2, Panel C
 
 ## Create the Sankey diagram
