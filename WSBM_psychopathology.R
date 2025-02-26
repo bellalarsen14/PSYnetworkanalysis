@@ -36,6 +36,8 @@ library(purrrlyr)
 library(skimr)
 library(cocor)
 library(devtools)
+#install superheat from devtools: un-comment the line below to install superheat before loading the package.
+# devtools::install_github("rlbarter/superheat"), https://github.com/rlbarter/superheat/issues/4
 library(superheat)
 library(networkD3)
 library(ggsankey)
