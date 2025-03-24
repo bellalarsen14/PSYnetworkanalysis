@@ -1,0 +1,54 @@
+﻿scale,XYY,XXY,Delta
+tot_APSD,Externalizing,Dissociality-1,Externalizing/Dissociality
+cu_APSD,Dissociality,Dissociality-1,Externalizing
+narc_APSD,Dissociality,Dissociality-1,Externalizing/Dissociality
+imp_APSD,Hyperactivity/Impulsivity,Dissociality-1,Externalizing/Dissociality
+ag.v_SHRP,Externalizing,Externalizing,Externalizing/Dissociality
+bul_SHRP,Externalizing,Externalizing,Externalizing/Dissociality
+ag.c_SHRP,Externalizing,Externalizing,Externalizing/Dissociality
+hos_SHRP,Total,Externalizing,Externalizing/Dissociality
+ag.p_SHRP,Dissociality,Dissociality-2,Externalizing
+tot_ARI,Externalizing,Externalizing,Externalizing/Dissociality
+att_CON,Inattention,ADHD-related,Externalizing/Dissociality
+hyp.imp_CON,Hyperactivity/Impulsivity,ADHD-related,Externalizing
+learn_CON,ASD related-1,Dissociality-1,Neurodevelopmental differences-1 (attn/EF/social)
+exec_CON,Internalizing,Dissociality-1,Neurodevelopmental differences-1 (attn/EF/social)
+def_CON,Externalizing,Externalizing,Externalizing
+peer_CON,ASD related-3,ASD related-1,ASD related
+tot_CON,Total,ADHD-related,Externalizing/Dissociality
+adhd.att_CON,Inattention,ADHD-related,Neurodevelopmental differences-1 (attn/EF/social)
+adhd.hyp_CON,Hyperactivity/Impulsivity,ADHD-related,Externalizing
+cond_CON,Externalizing,Externalizing,Externalizing
+odd_CON,Externalizing,Externalizing,Externalizing/Dissociality
+cont_DCD,ASD related-1,ASD related-2,ASD related
+fine_DCD,ASD related-3,ASD related-2,Neurodevelopmental differences-2 (motor/social)
+coord_DCD,ASD related-3,ASD related-2,Neurodevelopmental differences-2 (motor/social)
+tot_DCD,ASD related-3,ASD related-2,Neurodevelopmental differences-2 (motor/social)
+tot_SCQ,ASD related-1,ASD related-2,ASD related
+soc_SCQ,ASD related-1,ASD related-2,ASD related
+com_SCQ,ASD related-1,ASD related-2,Neurodevelopmental differences-2 (motor/social)
+rep_SCQ,ASD related-1,ASD related-2,ASD related
+emo_SDQ,Internalizing,Internalizing,ASD related
+cond_SDQ,Externalizing,Externalizing,Externalizing/Dissociality
+hyp.imp_SDQ,Inattention,ADHD-related,Externalizing/Dissociality
+peer_SDQ,ASD related-3,Internalizing,Neurodevelopmental differences-1 (attn/EF/social)
+soc_SDQ,ASD related-3,Dissociality-2,Neurodevelopmental differences-1 (attn/EF/social)
+tot_SDQ,Total,ASD related-1,Externalizing/Dissociality
+tot_SRS,ASD related-2,ASD related-1,ASD related
+awr_SRS,ASD related-2,ASD related-2,Neurodevelopmental differences-2 (motor/social)
+cog_SRS,ASD related-2,ASD related-1,ASD related
+com_SRS,ASD related-2,ASD related-1,ASD related
+mot_SRS,ASD related-1,Internalizing,ASD related
+man_SRS,ASD related-2,ASD related-1,ASD related
+asd_SRS,ASD related-2,ASD related-1,ASD related
+ax.dep_CBCL,Internalizing,Internalizing,Internalizing
+wt.dep_CBCL,ASD related-1,Internalizing,Internalizing
+som_CBCL,Internalizing,Internalizing,Externalizing
+soc_CBCL,Inattention,ASD related-1,ASD related
+tht_CBCL,ASD related-3,ASD related-1,Internalizing
+att_CBCL,Inattention,ADHD-related,Neurodevelopmental differences-1 (attn/EF/social)
+rule_CBCL,Externalizing,Externalizing,Externalizing/Dissociality
+ag_CBCL,Externalizing,Externalizing,Externalizing
+int_CBCL,Internalizing,Internalizing,Internalizing
+ext_CBCL,Externalizing,Externalizing,Externalizing
+tot_CBCL,Total,ASD related-1,Externalizing
