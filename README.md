@@ -10,4 +10,4 @@ The R file 'WSBM_psychopathology' reproduces Figure 4 and S1-S2 and correspondin
 
 The R file 'permutation' reproduces the permutation used to calculate statistical significance against the null distribution with group assignment shuffled.
 
-All necessary datafiles are included in the \Data folder.
+All necessary datafiles are included in the /data/ folder.
