@@ -32,7 +32,7 @@ library(scmap)
 library(tictoc)
 
 ### Load in WSBM assignment files (R data file)
-load(file="WSBM_assignment_git.RData")
+load(file="data/WSBM_assignment_git.RData")
 
 #===============================================================================
 
@@ -210,13 +210,13 @@ calc_metrics <- function(zscore_xxy,zscore_xyy,xxy_cluster_labels,xyy_cluster_la
 
 ## Read in data
 # 1: z-score matrices for the observed z-scores per group
-load(file="zscore_xxy.RData") 
-load(file="zscore_xyy.RData")
+load(file="data/zscore_xxy.RData") 
+load(file="data/zscore_xyy.RData")
 
 # 2: observed nodal degree and edgewise correlation and divergence values
-nodal_xxy_obs <- read.csv(file ="nodal_xxy_obs.csv")
-nodal_xyy_obs <- read.csv(file ="nodal_xyy_obs.csv")
-edge_corr_div_obs <- read.csv(file ="edge_corr_divergence_obs.csv")
+nodal_xxy_obs <- read.csv(file ="data/nodal_xxy_obs.csv")
+nodal_xyy_obs <- read.csv(file ="data/nodal_xyy_obs.csv")
+edge_corr_div_obs <- read.csv(file ="data/edge_corr_divergence_obs.csv")
 
 nodal_xxy_obs <- nodal_xxy_obs %>% 
   column_to_rownames(var = "X") %>% 
@@ -226,27 +226,27 @@ nodal_xyy_obs <- nodal_xyy_obs %>%
   rename(nodal_degree = x)
 
 # 3: observed correlation between all scales and two example scales
-ag_p_xxy_obs <- read.csv(file ="ag_p_xxy_obs.csv")
+ag_p_xxy_obs <- read.csv(file ="data/ag_p_xxy_obs.csv")
 colnames(ag_p_xxy_obs)[1] <- "scale_name"
 colnames(ag_p_xxy_obs)[2] <- "corr_ag_p"
-ag_p_xyy_obs <- read.csv(file ="ag_p_xyy_obs.csv")
+ag_p_xyy_obs <- read.csv(file ="data/ag_p_xyy_obs.csv")
 colnames(ag_p_xyy_obs)[1] <- "scale_name"
 colnames(ag_p_xyy_obs)[2] <- "corr_ag_p"
-soc_CBCL_xxy_obs <- read.csv(file ="soc_CBCL_xxy_obs.csv")
+soc_CBCL_xxy_obs <- read.csv(file ="data/soc_CBCL_xxy_obs.csv")
 colnames(soc_CBCL_xxy_obs)[1] <- "scale_name"
 colnames(soc_CBCL_xxy_obs)[2] <- "corr_soc_CBCL"
-soc_CBCL_xyy_obs <- read.csv(file ="soc_CBCL_xyy_obs.csv")
+soc_CBCL_xyy_obs <- read.csv(file ="data/soc_CBCL_xyy_obs.csv")
 colnames(soc_CBCL_xyy_obs)[1] <- "scale_name"
 colnames(soc_CBCL_xyy_obs)[2] <- "corr_soc_CBCL"
 
 # 4: absolute value of the observed delta z-score
-load(file="abs_delta_z_obs.RData")
+load(file="data/abs_delta_z_obs.RData")
 
 # 5: observed blockwise average edge values for the delta matrix
-load(file="delta_blockwise_avgedge_obs.RData")
+load(file="data/delta_blockwise_avgedge_obs.RData")
 
 # 6: load observed KS test results
-load(file="ks_estimate_obs.RData")
+load(file="data/ks_estimate_obs.RData")
 
 #===============================================================================
 ### Set up continued
