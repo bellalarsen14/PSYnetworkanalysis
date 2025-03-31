@@ -46,17 +46,17 @@ library(forcats)
 library(poolr)
 
 ### Load in correlation matrices - two 53x53 matrices (XXY/KS and XYY) - Pearson Correlations between scales
-matrix_xxy <- read.csv("matrix_xxy.csv")
-matrix_xyy <- read.csv("matrix_xyy.csv")
+matrix_xxy <- read.csv("data/matrix_xxy.csv")
+matrix_xyy <- read.csv("data/matrix_xyy.csv")
 
 ### Load in effect size dataframes
-cocor_xxy_df_eff_nodal <- read.csv("cocor_xxy_df_eff_nodal.csv")
-cocor_xyy_df_eff_nodal <- read.csv("cocor_xyy_df_eff_nodal.csv")
+cocor_xxy_df_eff_nodal <- read.csv("data/cocor_xxy_df_eff_nodal.csv")
+cocor_xyy_df_eff_nodal <- read.csv("data/cocor_xyy_df_eff_nodal.csv")
 
 ### Load in permuted p-values (see R file 'permutation' to reproduce these files)
-divergence_p_perm_long <- read.csv("divergence_p_perm_long.csv")
-ag_p_diff_p_perm_long <- read.csv("ag_p_diff_p_perm_long.csv")
-soc_CBCL_p_perm_long <- read.csv("soc_CBCL_p_perm_long.csv")
+divergence_p_perm_long <- read.csv("data/divergence_p_perm_long.csv")
+ag_p_diff_p_perm_long <- read.csv("data/ag_p_diff_p_perm_long.csv")
+soc_CBCL_p_perm_long <- read.csv("data/soc_CBCL_p_perm_long.csv")
 
 ### Transform correlation coefficients using Fisher's Z
 
