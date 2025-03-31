@@ -1,6 +1,6 @@
 # PSYnetworkanalysis
 
-## This is the code to reproduce the results from *Novel tools for comparing the architecture of psychopathology between neurogenetic disorders: An application to X- vs. Y-chromosome aneuploidy effects in males*
+## This code contains all materials to reproduce the results as described in *Novel tools for comparing the architecture of psychopathology between neurogenetic disorders: An application to X- vs. Y-chromosome aneuploidy effects in males* (in press in *Psychological Medicine*, link to be provided at publication)
 
 Preprint available at https://www.medrxiv.org/content/10.1101/2025.01.10.25320352v2
 
