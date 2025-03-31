@@ -48,11 +48,11 @@ library(forcats)
 library(poolr)
 
 ### Load in correlation matrices - two 53x53 matrices (XXY/KS and XYY) - Pearson Correlations between scales
-matrix_xxy <- read.csv("matrix_xxy.csv")
-matrix_xyy <- read.csv("matrix_xyy.csv")
+matrix_xxy <- read.csv("data/matrix_xxy.csv")
+matrix_xyy <- read.csv("data/matrix_xyy.csv")
 
 ### Load in cluster naming files
-cluster_naming <- read.csv("Cluster_Naming.csv")
+cluster_naming <- read.csv("data/Cluster_Naming.csv")
 
 # 1: convert dataframes to matrices
 rownames(matrix_xxy) <- matrix_xxy[,1]
