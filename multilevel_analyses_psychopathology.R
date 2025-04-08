@@ -437,6 +437,7 @@ edge_corr_eff <- edge_corr_eff %>%
 # 2: correlate the absolute difference in effect size per group 
 edge_eff_corr <- map2_dfr(as.data.frame(edge_corr_eff$abs_delta_eff), as.data.frame(edge_corr_eff$divergence), f)
 edge_eff_corr <- pull(edge_eff_corr)
+cor.test(edge_corr_eff$abs_delta_eff, edge_corr_eff$divergence, method="pearson")
 
 # 3: plot
 
