@@ -233,7 +233,7 @@ edge_corr_all <- edge_corr_all %>%
 ## Create Fig. 2B
 
 # 1: create legend
-legend_edge <- ggplot(edge_corr_all, aes(x=reorder(scale_name,-desc(correlation)), y = 0.1)) + 
+legend_edge <- ggplot(edge_corr_all, aes(x=reorder(scale_name,-desc(divergence)), y = 0.1)) + 
   geom_point(aes(color = scale_title), shape = 15, size = 3, show.legend = F) + 
   theme_classic()+
   theme(axis.title = element_blank(), axis.line = element_blank(), 
