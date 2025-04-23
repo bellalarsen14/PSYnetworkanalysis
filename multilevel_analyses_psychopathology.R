@@ -134,6 +134,9 @@ View(residuals_nd)
 # 
 # element_residual <- residual_point_est_check[[1]][[1]][["data"]][["y"]]
 
+#residuals_nd_check <- as.data.frame(element_residual)
+#rownames(residuals_nd_check) <-colnames(matrix_xxy)
+#View(residuals_nd_check)
 
 ## Create Fig. 2A
 # 1: color coding 
