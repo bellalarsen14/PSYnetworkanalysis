@@ -133,8 +133,7 @@ View(residuals_nd)
 # residual_point_est_check
 # 
 # element_residual <- residual_point_est_check[[1]][[1]][["data"]][["y"]]
-# 
-# deming_packageSimplyAgree$residuals
+
 
 ## Create Fig. 2A
 # 1: color coding 
