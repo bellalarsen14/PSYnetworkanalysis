@@ -119,13 +119,22 @@ deming_intercept <- deming_packageSimplyAgree$model$coef[1]
 # 3A: Extract fitted values
 fitted_values <- deming_intercept + deming_slope*nodal_xxy
 
-# 3B: Calculate residuals
+# 3B: Calculate residuals (OLS model regression fit) as shown in manuscript
 residuals_nd <- nodal_xyy - fitted_values
 
 # 3C: Display the residuals as a dataframe
 residuals_nd <- as.data.frame(residuals_nd)
 rownames(residuals_nd) <-colnames(matrix_xxy)
 View(residuals_nd)
+
+# 3D: ALTERNATIVE METHOD: to calculate perpendicular (optimized) residuals for the Deming Regression
+# calculate optimized residuals by using the check() function from SimplyAgree package
+# residual_point_est_check <- check(deming_packageSimplyAgree)
+# residual_point_est_check
+# 
+# element_residual <- residual_point_est_check[[1]][[1]][["data"]][["y"]]
+# 
+# deming_packageSimplyAgree$residuals
 
 ## Create Fig. 2A
 # 1: color coding 
