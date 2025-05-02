@@ -116,10 +116,7 @@ deming_packageSimplyAgree <- dem_reg(x="nodal_xxy", y="nodal_xyy", data = df_nod
 deming_slope <- deming_packageSimplyAgree$model$coef[2]
 deming_intercept <- deming_packageSimplyAgree$model$coef[1]
 
-# 3A: Extract fitted values
-fitted_values <- deming_intercept + deming_slope*nodal_xxy
-
-# 3B: calculate perpendicular (optimized) residuals for the Deming Regression
+# 3A: calculate perpendicular (optimized) residuals for the Deming Regression
 # calculate optimized residuals by using the check() function from SimplyAgree package
 # residual_point_est_check <- check(deming_packageSimplyAgree)
 # residual_point_est_check
